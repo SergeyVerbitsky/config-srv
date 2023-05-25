@@ -1,0 +1,25 @@
+server:
+  port: 8902
+  servlet:
+    context-path: /config
+spring:
+  application:
+    name: config-server
+  cloud:
+      config:
+        server:
+          vault:
+            scheme: "http"
+            host: "localhost"
+            backend: secrets
+            profile-separator: /
+            order: 1
+            port: 9200
+            kv-version: 2
+            authentication: approle
+            app-role:
+              #don't commit id to repo
+              role-Id: d2313a40-08df-fa0d-cddf-17f1589f54ef
+              secret-id: a86f5d5a-dffb-bed1-76df-b98755fbae39
+  profiles:
+    active: vault
