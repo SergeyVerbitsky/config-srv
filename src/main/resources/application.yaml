@@ -18,7 +18,7 @@ spring:
             kv-version: 2
             authentication: approle
             app-role:
-              #don't commit id to repo
+              #todo move it to ENV VAR
               role-Id: d2313a40-08df-fa0d-cddf-17f1589f54ef
               secret-id: a86f5d5a-dffb-bed1-76df-b98755fbae39
   profiles:
